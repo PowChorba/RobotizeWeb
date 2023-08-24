@@ -1,0 +1,39 @@
+'use client'
+
+interface vTitle{
+    title:string
+    keytitle: string
+}
+
+export const CardTitle = ({title, keytitle}:vTitle) => (
+    <>
+      <h4 className="text-sm font-bold min-h-[40px] max-h-[40px] truncate-height"><span className="text-[#441eae]">{keytitle}</span>{'.'}{title}</h4>
+      <style jsx>{`
+        .truncate-height {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );
+
+  interface vSubTitle{
+    subtitle:string
+}
+
+  export const CardBajada = ({subtitle}: vSubTitle) => (
+    <>
+      <p className="text-xs min-h-[50px] max-h-[50px] truncate-height items-center">{subtitle}
+            </p>
+      <style jsx>{`
+        .truncate-height {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );
