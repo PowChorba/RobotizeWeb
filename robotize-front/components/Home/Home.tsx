@@ -25,12 +25,12 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
             
                 <div className="flex justify-between py-2 border-b-2 border-[#441eae]">
                     <div className="flex text-left gap-6">
-                    <Link href='/economia'>Dólar oficial <strong>${dataDolar[0].sell}</strong></Link>
-                    <Link href='/economia'>Dólar blue <strong>${dataDolar[1].sell}</strong></Link>
-                    <Link href='/economia'>Dólar turista <strong>${dataDolar[3].sell}</strong></Link>
-                    <Link href='/economia'>Dólar CCL <strong>${dataDolar[5].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar oficial <strong>${dataDolar[0].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar blue <strong>${dataDolar[1].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar turista <strong>${dataDolar[3].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar CCL <strong>${dataDolar[5].sell}</strong></Link>
                     </div>
-                    <Link href='/clima'>Capital Federal <strong>{weatherCity}</strong></Link>
+                    <Link href='/clima' className="lg:text-sm">Capital Federal <strong>{weatherCity}</strong></Link>
                 </div>
             <section className="flex w-full py-10 border-b-2 border-[#441eae]">
                 {/* Esto va a la izqueirda, renderizando todas las notas del dia */}
@@ -44,10 +44,6 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                 {/* Esto va a la derecha, mostrando las ultimas noticias */}
                 <aside className="w-1/4 px-4">
                     <h4 className="py-2 text-center border-b-2 border-[#441eae] text-[#441eae]">ULTIMAS NOTICIAS</h4>
-                    <LastCard/>
-                    <LastCard/>
-                    <LastCard/>
-                    <LastCard/>
                     <LastCard/>
                 </aside>
             </section>

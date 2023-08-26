@@ -17,26 +17,23 @@ export default function Seccion({seccion, dataDolar, dataSection, dataWeather}: 
     // Para agregar mas notas
     const [moreNews, setMoreNews] = useState<NewModel[]>(dataSection)
     const [limit,setLimit] = useState<boolean>(false)
-    const lastArticles = moreNews.slice(2, moreNews.length)
     const [counter,setCounter] = useState<number>(2)
     const firstTwo = moreNews?.slice(0,2)
-
+    const lastArticles = moreNews.slice(2, moreNews.length)
+    
+    
     // Para traer mas notas 
     const getNews = async () => {
         const articlesPage: NewModel[] = await getMoreNews({'section': seccion, 'page': counter.toString()})
         setCounter(counter + 1)
-        console.log(articlesPage)
-        if(articlesPage[0]?.title ){
+        if(articlesPage[0]?.title === 'No hay mas data'){
             setLimit(true)
         }else {
-            let arrayNews: NewModel[] = []
-            arrayNews = arrayNews.concat(moreNews)
-            arrayNews = arrayNews.concat(articlesPage)
+            let arrayNews: NewModel[] = [...moreNews,...articlesPage]
             setMoreNews(arrayNews)
         }
     }
-
-
+    
     return(
         <section>
             <p className="text-2xl py-4"><strong>{seccion.toUpperCase()}</strong></p>

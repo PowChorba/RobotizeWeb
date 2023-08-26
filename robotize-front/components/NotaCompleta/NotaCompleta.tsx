@@ -23,10 +23,10 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
             <article className="py-4 flex flex-col gap-4">
                 <p className="pb-6 text-lg text-left"><Link href='/'>Robotize</Link> {'>'} <Link href={`/${seccion.toLowerCase()}`}>{seccion}</Link></p>
                 {/* Titulo */}
-                <h2 className="text-4xl font-bold text-center">{data.title}</h2>
+                <h2 className="text-4xl lg:text-2xl font-bold text-center">{data.title}</h2>
                 {/* Bajada */}
-                <p className="text-lg text-center">{data.subtitle}</p>
-                <p className="text-[#5a5a5a]">{data.date}</p>
+                <p className="text-lg lg:text-sm text-center">{data.subtitle}</p>
+                <p className="text-[#5a5a5a] lg:text-xs">{data.date}</p>
                 <div className="flex gap-2 items-center">
                     <Image src={Robotize} alt='Icono' width={50} height={50} className="rounded-[50%]"/>
                 <span>Por <strong>Robotize</strong></span>

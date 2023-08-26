@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { NewsService } from './news.service';
 import { CreateNew } from 'src/type';
 
@@ -16,7 +16,7 @@ export class NewsController {
         return this.newsService.findNews(page)
     }
 
-    @Get('article/:title')
+    @Get('/article/:title')
     getNewsTitle(@Param('title') title: string){
         return this.newsService.findNewsTitle(title)
     }
@@ -29,6 +29,11 @@ export class NewsController {
     @Get('/section/:section/:page')
     getNewsBySectionHome(@Param('section') section: string, @Param('page') page: string){
         return this.newsService.findNewsBySeccionHome({section,page})
+    }
+
+    @Get('/search')
+    getSearchNews(@Query('keyword') keyword: string){
+        return this.newsService.findByKeyWork(keyword)
     }
 
 }

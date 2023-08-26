@@ -20,7 +20,7 @@ export default function NewsCard({_id,title,subtitle,img,date,content,section, k
     return(
         <Link href={`/${section}/${_id}`} className="text-center">
             {/* Titulo */}
-            <Image src={img} alt="asd" width={250} height={250} className="w-full p-2 min-h-[250px]"/>
+            <Image src={img} alt="asd" width={250} height={250} className="w-full p-2 min-h-[250px] lg:min-h-[150px]"/>
             <CardTitle title={pretitle} keytitle={keytitle}/>
             {/* Bajada */}
             {/* <CardBajada subtitle={subtitle} /> */}

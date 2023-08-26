@@ -7,7 +7,6 @@ import { HiOutlineBars3 } from 'react-icons/hi2'
 
 export default function Navbar(){
     const router = useRouter()
-    const [search, setSearch] = useState(false)
     const [sidebar,setSidebar] = useState(false)
 
     return(
@@ -18,11 +17,11 @@ export default function Navbar(){
                     <span>SECCIONES</span>
                 </div>
                 <h1 className="font-bold text-6xl cursor-pointer text-[#441eae]" onClick={() => router.push('/')}>Robotize</h1>
-                <AiOutlineSearch onClick={() => setSearch(true)} className={search ? 'hidden' : 'flex cursor-pointer text-[#441eae]'}/>
-                <div className={search ? "flex justify-normal items-center cursor-pointer" : 'hidden'}>
+                <AiOutlineSearch onClick={() => router.push('/search')} className='flex text-lg cursor-pointer text-[#441eae]'/>
+                {/* <div className={search ? "flex justify-normal items-center cursor-pointer" : 'hidden'}>
                     <input type="text" placeholder="Busqueda" className="border-2 border-black rounded-lg" />
                     <AiOutlineClose onClick={() => setSearch(false)}/>
-                </div>
+                </div> */}
             </div> 
                 {
                     sidebar && <SideBar setSidebar={setSidebar} sidebar={sidebar}/>
