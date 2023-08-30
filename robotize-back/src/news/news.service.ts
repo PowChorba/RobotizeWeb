@@ -24,6 +24,7 @@ export class NewsService {
     }
 
     async findNews(page: string){
+        console.log('Esta aca')
         const limit = 27
         const skip = (parseInt(page) - 1) * limit
 

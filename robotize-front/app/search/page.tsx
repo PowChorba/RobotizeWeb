@@ -5,7 +5,7 @@ export default function SearchApp() {
     return (
         <>
             <Navbar />
-            <main className="w-3/4 mx-auto p-2">
+            <main className="w-1/2 mx-auto p-2">
                 <Search />
             </main>
         </>)
