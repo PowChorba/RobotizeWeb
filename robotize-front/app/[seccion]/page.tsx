@@ -12,9 +12,8 @@ export default async function SecctionApp({params}: any){
     return(
         <>
             <Navbar/>
-            <main className="w-3/4 mx-auto p-2">
-                
-            <Seccion seccion={params.seccion} dataDolar={dataDolar} dataSection={dataSection} dataWeather={dataWeather}/>
+            <main className="w-3/4 mx-auto p-2 max-sm:w-full">
+                <Seccion seccion={params.seccion} dataDolar={dataDolar} dataSection={dataSection} dataWeather={dataWeather}/>
             </main>
         </>)
 }

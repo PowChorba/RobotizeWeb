@@ -23,7 +23,7 @@ export default async function App() {
   return (
     <>
       <Navbar />
-      <main className="w-3/4 mx-auto p-2">
+      <main className="w-3/4 mx-auto p-2 max-sm:w-full">
         <Home data={data} dataDolar={dataDolar} weatherCity={weatherCity} dataDeportes={dataDeportes} dataEconomia={dataEconomia} dataPolitica={dataPolitica}/>
       </main>
     </>

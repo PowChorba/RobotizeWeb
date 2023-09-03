@@ -23,7 +23,7 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
     return(
             <>
             
-                <div className="flex justify-between py-2 border-b-2 border-[#441eae]">
+                <div className="flex justify-between py-2 border-b-2 border-[#441eae] max-sm:hidden">
                     <div className="flex text-left gap-6">
                     <Link href='/economia' className="lg:text-sm">Dólar oficial <strong>${dataDolar[0].sell}</strong></Link>
                     <Link href='/economia' className="lg:text-sm">Dólar blue <strong>${dataDolar[1].sell}</strong></Link>
@@ -32,9 +32,10 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                     </div>
                     <Link href='/clima' className="lg:text-sm">Capital Federal <strong>{weatherCity}</strong></Link>
                 </div>
-            <section className="flex w-full py-10 border-b-2 border-[#441eae]">
+                <h3 className="px-2 text-lg hidden max-sm:block py-2 text-[#441eae] font-bold">Noticias destacadas</h3>
+            <section className="flex w-full py-10 border-b-2 border-[#441eae] max-sm:py-4">
                 {/* Esto va a la izqueirda, renderizando todas las notas del dia */}
-                <div className="w-3/4 grid grid-cols-3 gap-4">
+                <div className="w-3/4 grid grid-cols-3 gap-4 max-sm:grid-cols-1 max-sm:w-full">
                     {
                         recentNews.map(e => {
                             return <NewsCard key={e._id} _id={e._id} title={e.title} keytitle={e.keytitle} pretitle={e.pretitle} subtitle={e.subtitle} content={e.content} img={e.img} date={e.date} section={e.section}/>
@@ -42,7 +43,7 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                     }
                 </div>
                 {/* Esto va a la derecha, mostrando las ultimas noticias */}
-                <aside className="w-1/4 px-4">
+                <aside className="w-1/4 px-4 max-sm:hidden">
                     <h4 className="py-2 text-center border-b-2 border-[#441eae] text-[#441eae]">ULTIMAS NOTICIAS</h4>
                     <LastCard/>
                 </aside>

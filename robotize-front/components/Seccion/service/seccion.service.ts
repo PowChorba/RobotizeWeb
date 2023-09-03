@@ -10,3 +10,12 @@ export const getMoreNews = async (data: vMoreGames) => {
         console.log(error)
     }
 }
+
+export const getHoroscopo = async () => {
+    try {
+        const apiData = await axios.get('http://localhost:3001/horoscopo')
+        return apiData.data
+    } catch (error) {
+        console.log(error)
+    }
+}

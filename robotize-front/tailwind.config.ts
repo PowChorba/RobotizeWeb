@@ -15,6 +15,9 @@ const config: Config = {
       },
       backgroundColor: {
         'lightBlack' : 'rgba(0, 0, 0, 0.500)'
+      },
+      boxShadow: {
+        'cardShadow': 'box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.29);'
       }
     },
   },

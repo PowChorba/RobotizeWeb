@@ -32,3 +32,16 @@ export interface vMoreGames {
   section: string
   page: string
 }
+
+export interface HoroscopoModel {
+  _id: string
+  name: string
+  img: string
+  icon: string
+  personal: string
+  travel: string
+  money: string
+  career: string
+  health: string
+  emotions: string
+}

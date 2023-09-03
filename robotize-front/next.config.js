@@ -10,8 +10,15 @@ const nextConfig = {
             },
             {
                 hostname: "www.clarin.com"
+            },
+            {
+                hostname: 'arc-static.glanacion.com'
+            },
+            {
+                hostname: "www.cronica.com.ar"
             }
-        ]
+        ],
+        dangerouslyAllowSVG: true,
     }
 }
 

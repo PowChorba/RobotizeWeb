@@ -11,13 +11,13 @@ export default function Navbar(){
 
     return(
         <nav className='w-full border-b-2 border-[#441eae] sticky top-0'>
-            <div className="flex justify-between items-center mx-auto py-4 bg-white w-3/4">
+            <div className="flex justify-between items-center mx-auto py-4 bg-white w-3/4 max-sm:w-full max-sm:justify-around">
                 <div onClick={() => setSidebar(true)} className='flex justify-center items-center gap-2 border-slate-100 p-2 rounded-lg hover:cursor-pointer hover:bg-slate-100'>
                     <HiOutlineBars3 className='text-lg text-[#441eae]'/>
-                    <span>SECCIONES</span>
+                    <span className='max-sm:hidden'>SECCIONES</span>
                 </div>
-                <h1 className="font-bold text-6xl cursor-pointer text-[#441eae]" onClick={() => router.push('/')}>Robotize</h1>
-                <AiOutlineSearch onClick={() => router.push('/search')} className='flex text-lg cursor-pointer text-[#441eae]'/>
+                <h1 className="font-bold text-6xl cursor-pointer text-[#441eae] max-sm:text-4xl" onClick={() => router.push('/')}>Robotize</h1>
+                <AiOutlineSearch onClick={() => router.push('/search')} className='flex text-lg cursor-pointer text-[#441eae] max-sm:hidden'/>
                 {/* <div className={search ? "flex justify-normal items-center cursor-pointer" : 'hidden'}>
                     <input type="text" placeholder="Busqueda" className="border-2 border-black rounded-lg" />
                     <AiOutlineClose onClick={() => setSearch(false)}/>

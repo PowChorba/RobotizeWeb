@@ -3,8 +3,8 @@ import {AiOutlineTwitter, AiFillLinkedin, AiFillMail} from 'react-icons/ai'
 
 export default function Footer(){
     return(
-        <footer className="flex justify-between p-4 text-center items-center border-t-2">
-            <div className="flex flex-col gap-2">
+        <footer className="flex max-sm:flex-col max-sm:gap-4 justify-between p-4 text-center items-center border-t-2">
+            <div className="flex flex-col gap-2 max-sm:hidden">
                 <p className="font-semibold"><u>Secciones:</u></p>
                 <Link href='/politica'>Politica</Link>
                 <Link href='/deportes'>Deportes</Link>
