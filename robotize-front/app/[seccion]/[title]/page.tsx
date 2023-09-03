@@ -15,7 +15,7 @@ export default async function NotaApp({params}:any){
             <Navbar/>
             <main className="w-3/4 mx-auto p-2 max-sm:w-full">
             {
-                params.seccion === 'horoscopo'
+                params.seccion === 'horoscopo' && !params.title.includes('64')
                 ? <NotaHoroscopo data={data} seccion={params.seccion} dataSection={dataSection}/>
                 :<NotaCompleta data={data} seccion={params.seccion} dataSection={dataSection}/>
             }

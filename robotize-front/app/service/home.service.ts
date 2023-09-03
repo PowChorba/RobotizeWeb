@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export const getNews = async (page:string) => {
-    console.log(process.env.PETICION_BACK, 'asdasdasdadas')
     try {
         const apiData = await axios.get(`${process.env.PETICION_BACK}/news/1`)
         return apiData.data

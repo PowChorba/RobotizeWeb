@@ -7,7 +7,7 @@ export const getArticle = async (title:string, section:string) => {
     titleUrl = titleUrl.replace(/%C3%B1/g, 'ñ')
     titleUrl = titleUrl.replace(/%3A/g, ':')
     try {
-        if(section === 'horoscopo'){
+        if(section === 'horoscopo' && !title.includes('64')){
             const apiData = await axios.get(`${process.env.PETICION_BACK}/horoscopo/${title}`)
             return apiData.data
         }else{

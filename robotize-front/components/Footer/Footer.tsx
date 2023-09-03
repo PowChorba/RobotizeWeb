@@ -8,8 +8,9 @@ export default function Footer(){
                 <p className="font-semibold"><u>Secciones:</u></p>
                 <Link href='/politica'>Politica</Link>
                 <Link href='/deportes'>Deportes</Link>
-                <Link href='/horoscopo'>Horoscopo</Link>
+                {/* <Link href='/horoscopo'>Horoscopo</Link> */}
                 <Link href='/economia'>Economia</Link>
+                <Link href='/clima'>Clima</Link>
             </div>
             <div>
             <h2 className="text-3xl py-2 text-[#441eae]">ROBOTIZE</h2>

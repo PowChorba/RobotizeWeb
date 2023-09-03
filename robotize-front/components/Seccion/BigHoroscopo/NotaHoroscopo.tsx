@@ -1,3 +1,4 @@
+'use client'
 import { HoroscopoModel, NewModel } from "@/type"
 import Image from "next/image"
 import Robotize from '../../../assets/robotizeicono.jpeg'
@@ -5,6 +6,7 @@ import { getDay } from "./service/service.horoscopo"
 import RelacionCard from "@/components/NotaCompleta/RelacionCard/RelacionCard"
 import Link from "next/link"
 import Footer from "@/components/Footer/Footer"
+import { useRouter } from "next/navigation"
 
 interface Props {
     data: HoroscopoModel
@@ -13,16 +15,16 @@ interface Props {
 }
 
 export default function NotaHoroscopo({data, seccion, dataSection}: Props){
-    const img = data.img.replace('cambiar', '')
+    const img = data.img?.replace('cambiar', '')
     const date = getDay()
-
+    const router = useRouter()
     // Primer letra en mayuscula
     seccion = seccion[0].toUpperCase() + seccion.substring(1)
 
     return(
         <section>
             <article className="py-4 flex flex-col gap-4">
-                <p className="pb-6 text-lg text-left"><Link href='/'>Robotize</Link> {'>'} <Link href={`/${seccion.toLowerCase()}`}>{seccion}</Link></p>
+                <p className="pb-6 text-lg text-left"><Link href='/'>Robotize</Link> {'>'} <span onClick={() => router.push(`/${seccion.toLowerCase()}`)}>{seccion}</span></p>
                 <h2 className="text-4xl lg:text-2xl font-bold text-center max-sm:text-2xl">Horóscopo de {data.name} de hoy, {date[2]} {date[0]} de {date[1]}</h2>
                 <p className="text-lg lg:text-sm text-center max-sm:text-sm">No te pierdas lo que te deparan los astros para esta jornada, según tu signo. Conocé el horóscopo de hoy y todos los detalles.</p>
                 <div className="flex gap-2 items-center">
