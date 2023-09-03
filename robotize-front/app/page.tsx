@@ -4,6 +4,7 @@ import { getDolar, getNews, getNewsSection, getWeatherCity } from "./service/hom
 import { NewModel } from "@/type";
 
 export default async function App() {
+  console.log(process.env.PETICION_BACK, 'asdasdasdadas')
   const data = await getNews('1')
   const titleData = data.map((e:NewModel) => e.title)
   const dataDolar = await getDolar()

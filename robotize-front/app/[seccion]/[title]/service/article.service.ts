@@ -8,10 +8,10 @@ export const getArticle = async (title:string, section:string) => {
     titleUrl = titleUrl.replace(/%3A/g, ':')
     try {
         if(section === 'horoscopo'){
-            const apiData = await axios.get(`http://localhost:3001/horoscopo/${title}`)
+            const apiData = await axios.get(`${process.env.PETICION_BACK}/horoscopo/${title}`)
             return apiData.data
         }else{
-            const apiData = await axios.get(`http://localhost:3001/news/article/${titleUrl}`)
+            const apiData = await axios.get(`${process.env.PETICION_BACK}/news/article/${titleUrl}`)
             return apiData.data
         }
     } catch (error) {
