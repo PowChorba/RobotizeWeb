@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    
     <html lang="en">
-      {/* <body>{children}</body> */}
       <body className={roboto_mono.className}>{children}</body>
     </html>
   )
