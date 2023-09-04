@@ -52,13 +52,13 @@ export default function BigDolar({dataDolar}: Props){
                 <span className="font-bold">${dataDolar[5].sell}</span>
             </div>
         </div>
-        <div>
+        {/* <div>
             <h4 className="font-bold text-[#441eae]">Dólar {dataDolar[6].name}</h4>
             <div className="grid grid-cols-1">
                 <span className='text-xs text-[#5a5a5a]'>Venta</span>
                 <span className="font-bold">${dataDolar[6].sell}</span>
             </div>
-        </div>
+        </div> */}
         <div>
             <h4 className="font-bold text-[#441eae]">Euro</h4>
             <div className="grid grid-cols-2">
