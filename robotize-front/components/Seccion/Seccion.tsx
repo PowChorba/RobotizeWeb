@@ -48,7 +48,7 @@ export default function Seccion({seccion, dataDolar, dataSection, dataWeather}: 
                 }
             </article>
             {
-                !limit && <div className="text-center p-2 rounded-lg bg-[#441eae] text-white"><button onClick={getNews} className="">Ver mas</button></div>
+                !limit && <div className="text-center p-2 rounded-lg bg-[#441eae] text-white"><button onClick={getNews}>Ver mas</button></div>
             }
             <Footer/>
         </section>)

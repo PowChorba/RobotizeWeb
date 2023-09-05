@@ -28,7 +28,7 @@ export interface WeatherModel {
 }
 
 
-export interface vMoreGames {
+export interface vMoreArticles {
   section: string
   page: string
 }
