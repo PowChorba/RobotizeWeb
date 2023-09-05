@@ -24,7 +24,6 @@ export class NewsService {
     }
 
     async findNews(page: string){
-        console.log('Esta aca')
         const limit = 27
         const skip = (parseInt(page) - 1) * limit
 
@@ -34,8 +33,6 @@ export class NewsService {
     }
 
     async findNewsTitle(title:string){
-        // title = title?.replace(/-/g, " ")
-
         const news = await this.newsModel.findOne({
             _id: title
         })
@@ -69,7 +66,6 @@ export class NewsService {
     } 
 
     async findByKeyWork(keyword: string){
-        console.log(keyword, 'keyword')
         const regex = new RegExp(keyword, 'i')
         const news = await this.newsModel.find({title: regex}).sort({createdAt: -1}).exec()
         if(news.length !== 0){

@@ -1,9 +1,9 @@
-import { vMoreGames } from "@/type";
+import { vMoreArticles } from "@/type";
 import axios from "axios";
 
-export const getMoreNews = async (data: vMoreGames) => {
+export const getMoreNews = async (data: vMoreArticles) => {
     try {
-        const apiData = await axios.get(`${process.env.PETICION_BACK}/news/${data.section}/${data.page}`)
+        const apiData = await axios.get(`${process.env.NEXT_PUBLIC_PETICION_BACK}/news/${data.section}/${data.page}`)
         return apiData.data
     } catch (error) {
         console.log(error)

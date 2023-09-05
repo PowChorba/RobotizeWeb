@@ -19,16 +19,16 @@ interface Props{
 
 export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes}: Props){
     const recentNews = data.slice(0,6)
-    const allNews = data.slice(6,data.length)
+
     return(
             <>
             
                 <div className="flex justify-between py-2 border-b-2 border-[#441eae] max-sm:hidden">
                     <div className="flex text-left gap-6">
-                    <Link href='/economia' className="lg:text-sm">Dólar oficial <strong>${dataDolar[0].sell}</strong></Link>
-                    <Link href='/economia' className="lg:text-sm">Dólar blue <strong>${dataDolar[1].sell}</strong></Link>
-                    <Link href='/economia' className="lg:text-sm">Dólar turista <strong>${dataDolar[3].sell}</strong></Link>
-                    <Link href='/economia' className="lg:text-sm">Dólar CCL <strong>${dataDolar[5].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar oficial <strong>${dataDolar[1].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar blue <strong>${dataDolar[0].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar Bolsa <strong>${dataDolar[2].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar CCL <strong>${dataDolar[3].sell}</strong></Link>
                     </div>
                     <Link href='/clima' className="lg:text-sm">Capital Federal <strong>{weatherCity}</strong></Link>
                 </div>

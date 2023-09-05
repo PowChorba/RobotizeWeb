@@ -16,12 +16,8 @@ export default function Navbar(){
                     <HiOutlineBars3 className='text-lg text-[#441eae]'/>
                     <span className='max-sm:hidden'>SECCIONES</span>
                 </div>
-                <h1 className="font-bold text-6xl cursor-pointer text-[#441eae] max-sm:text-4xl" onClick={() => router.push('/')}>Robotize</h1>
+                <h1 className="font-bold text-6xl cursor-pointer text-[#441eae] max-sm:text-4xl" onClick={() => router.push('/home')}>Robotize</h1>
                 <AiOutlineSearch onClick={() => router.push('/search')} className='flex text-lg cursor-pointer text-[#441eae] max-sm:hidden'/>
-                {/* <div className={search ? "flex justify-normal items-center cursor-pointer" : 'hidden'}>
-                    <input type="text" placeholder="Busqueda" className="border-2 border-black rounded-lg" />
-                    <AiOutlineClose onClick={() => setSearch(false)}/>
-                </div> */}
             </div> 
                 {
                     sidebar && <SideBar setSidebar={setSidebar} sidebar={sidebar}/>

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Seccion from "@/components/Seccion/Seccion";
-import { getDolar } from "../service/home.service";
+import { getDolar } from "../home/service/home.service";
 import { getSectionNotes, getWeather } from "./service/section.service";
 
 export default async function SecctionApp({params}: any){
