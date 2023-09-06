@@ -40,7 +40,7 @@ export class NewsService {
         if(news){
             return news
         }
-        return 'News not found'
+        return {title:'News not found'}
     }
 
     async findNewsBySeccion(data: NewsSectionModel) {

@@ -16,6 +16,9 @@ const nextConfig = {
             },
             {
                 hostname: "www.cronica.com.ar"
+            },
+            {
+                hostname: "www.ole.com.ar"
             }
         ],
         dangerouslyAllowSVG: true,

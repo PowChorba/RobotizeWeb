@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "../Navbar/Navbar";
 import NewsCard from "../NewsCard/NewsCard";
 import LastCard from "../LastCard/LastCard";
 import SectionPolitica from "./Politica/Politica";
