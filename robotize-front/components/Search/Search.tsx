@@ -4,6 +4,7 @@ import { useState } from "react"
 import { getSearchNews } from "./service/search.service"
 import { NewModel } from "@/type"
 import SearchCard from "./SearchCard/SearchCard"
+import NotFound from "../NotFound/NotFound"
 
 export default function Search(){
     const [inputText, setInputText] = useState('')
@@ -40,7 +41,7 @@ export default function Search(){
                         })
                     }
                 </article>
-            :   <div>{notFound}</div>
+            :   <NotFound notFound={notFound}/>
         }
     </>)
 }
