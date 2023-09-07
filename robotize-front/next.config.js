@@ -19,6 +19,9 @@ const nextConfig = {
             },
             {
                 hostname: "www.ole.com.ar"
+            },
+            {
+                hostname: "res.cloudinary.com"
             }
         ],
         dangerouslyAllowSVG: true,
