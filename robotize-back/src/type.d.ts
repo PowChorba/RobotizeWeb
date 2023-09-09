@@ -7,6 +7,7 @@ export interface CreateNew {
   date: string;
   keytitle:string
   pretitle: string
+  tags: string[]
 }
 
 export interface CreateDolar {

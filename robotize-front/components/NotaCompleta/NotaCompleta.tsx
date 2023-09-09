@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { NewModel } from "@/type";
 import Robotize from '../../assets/robotizeicono.jpeg'
 import NotFound from "../NotFound/NotFound";
+import TagCard from "../NewsCard/TagCard";
 
 interface Props {
     data: NewModel
@@ -39,6 +40,13 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                         <Image src={data.img} alt="asd" width={200} height={200} className="w-4/6 max-sm:w-full py-2 mx-auto"/>
                         { contentComplete && <p className="w-full mx-auto text-left" dangerouslySetInnerHTML={{ __html: contentComplete }}></p>}
                         <br /><br />
+                        <div className="flex justify-start items-center gap-4">
+                            {
+                                data.tags.map(e => {
+                                    return <TagCard key={e} tag={e}/>
+                                })
+                            }
+                        </div>
                     </article>
                         <h4 className="font-semibold text-lg">Te puede interesar</h4>
                     <article className="border-t-2 grid grid-cols-5 text-center gap-6 border-b-2 border-[#441eae] py-4 max-sm:grid-cols-3">

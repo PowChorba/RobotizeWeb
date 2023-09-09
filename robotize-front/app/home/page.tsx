@@ -5,7 +5,8 @@ import { NewModel } from "@/type";
 
 export default async function HomeApp() {
   const data = await getNews('1')
-  const titleData = data.map((e:NewModel) => e.title)
+  let titleData = data.map((e:NewModel) => e.title).splice(0,6)
+  // titleData = titleData.splice(0,6)
   const dataDolar = await getDolar()
   let weatherCity = await getWeatherCity('Buenos Aires')
   weatherCity = weatherCity.actual_temp

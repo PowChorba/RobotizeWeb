@@ -29,6 +29,9 @@ export class News {
     @Prop()
     section: string
 
+    @Prop()
+    tags: string[]
+
 }
 
 export const NewsSchema = SchemaFactory.createForClass(News)

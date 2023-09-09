@@ -8,6 +8,7 @@ export interface NewModel {
   img: string;
   date: string;
   section: string;
+  tags: string[]
 }
 
 export interface DolarModel {
