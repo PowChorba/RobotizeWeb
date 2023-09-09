@@ -17,9 +17,10 @@ export class NewsService {
             date: data.date,
             section: data.section,
             keytitle: data.keytitle,
-            pretitle: data.pretitle
+            pretitle: data.pretitle,
+            tags: data.tags
         })
-
+        console.log(news.tags, data.tags)
         return news.save()
     }
 
@@ -56,7 +57,7 @@ export class NewsService {
     }
 
     async findNewsBySeccionHome(data: NewsSectionModel) {
-        const limit = 10
+        const limit = 8
         const skip = (parseInt(data.section) - 1) * limit
 
         const allNews = await this.newsModel.find({section:data.section}).sort({createdAt: -1}).skip(skip).limit(limit).exec()

@@ -25,8 +25,7 @@ export default function Search(){
             console.log(error)
         }
     }
-    
-    console.log(articles,'News')
+
     return(<>
         <form onSubmit={(e) => requestData(e)} className="py-2 w-full flex justify-center items-center mx-auto gap-2">
             <input name='inputText' value={inputText} type="text" placeholder="Busca las ultimas noticias" onChange={(e) => setInputText(e.target.value)} className="w-5/6 border-2 px-2 rounded-lg border-[#441eae]"/>

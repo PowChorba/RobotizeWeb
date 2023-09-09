@@ -18,7 +18,6 @@ interface Props{
 
 export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes}: Props){
     const recentNews = data.slice(0,6)
-
     return(
             <>
             
