@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import NotaCompleta from "@/components/NotaCompleta/NotaCompleta";
 import { getArticle } from "./service/article.service";
 import { getSectionNotes } from "../service/section.service";
-import NotaHoroscopo from "@/components/Seccion/BigHoroscopo/NotaHoroscopo";
 import NotFound from "@/components/NotFound/NotFound";
 
 
@@ -15,12 +14,7 @@ export default async function NotaApp({params}:any){
         <>
             <Navbar/>
             <main className="w-3/4 mx-auto p-2 max-sm:w-full">
-            {
-                params.seccion === 'horoscopo' && !params.title.includes('64')
-                ? <NotaHoroscopo data={data} seccion={params.seccion} dataSection={dataSection}/>
-                : <NotaCompleta data={data} seccion={params.seccion} dataSection={dataSection}/>
-            }
-
+                <NotaCompleta data={data} seccion={params.seccion} dataSection={dataSection}/>
             </main>
         </>)
 }

@@ -11,9 +11,9 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  if (request.nextUrl.pathname.endsWith("/horoscopo") && request.nextUrl.pathname.includes("/horoscopo")) {
-    return NextResponse.redirect(new URL("/home", request.url));
-  }
+  // if (request.nextUrl.pathname.endsWith("/horoscopo") && request.nextUrl.pathname.includes("/horoscopo")) {
+  //   return NextResponse.redirect(new URL("/home", request.url));
+  // }
 
 
 //   return response;

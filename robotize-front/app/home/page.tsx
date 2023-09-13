@@ -1,7 +1,10 @@
+// 'use client'
 import Home from "@/components/Home/Home";
 import Navbar from "@/components/Navbar/Navbar";
 import { getDolar, getNews, getNewsSection, getWeatherCity } from "./service/home.service";
-import { NewModel } from "@/type";
+import { DolarModel, NewModel } from "@/type";
+
+export const revalidate = 3600;
 
 export default async function HomeApp() {
   const data = await getNews('1')
@@ -30,3 +33,7 @@ export default async function HomeApp() {
     </>
   );
 }
+
+
+
+
