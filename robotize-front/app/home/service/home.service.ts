@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getNews = async (page:string) => {
+export const getNews =  async (page:string) => {
     try {
         const apiData = await axios.get(`${process.env.PETICION_BACK}/news/1`)
         return apiData.data
@@ -11,7 +11,7 @@ export const getNews = async (page:string) => {
 
 export const getDolar = async () => {
     try {
-        const apiData = await axios.get(`${process.env.PETICION_BACK}/dolar`)
+        const apiData = await axios.get(`${process.env.NEXT_PUBLIC_PETICION_BACK}/dolar`)
         return apiData.data
     } catch (error) {
         console.log(error)

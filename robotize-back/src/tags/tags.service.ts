@@ -9,6 +9,7 @@ export class TagsService {
 
     async getTag(tag: string){
         tag = tag.replace('-', ' ')
+
         const findNews = await this.newsModel.find({
             tags: tag
         })

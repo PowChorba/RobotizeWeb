@@ -1,5 +1,5 @@
 import { HoroscopoModel } from "@/type"
-import { getHoroscopo } from "../service/seccion.service"
+import { getHoroscopo } from "../Seccion/service/seccion.service"
 import CardHoroscopo from "./CardHorscopo"
 
 

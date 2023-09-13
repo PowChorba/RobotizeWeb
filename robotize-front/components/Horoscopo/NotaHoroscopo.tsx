@@ -1,7 +1,7 @@
 'use client'
 import { HoroscopoModel, NewModel } from "@/type"
 import Image from "next/image"
-import Robotize from '../../../assets/robotizeicono.jpeg'
+import Robotize from '../../assets/robotizeicono.jpeg'
 import { getDay } from "./service/service.horoscopo"
 import RelacionCard from "@/components/NotaCompleta/RelacionCard/RelacionCard"
 import Link from "next/link"
