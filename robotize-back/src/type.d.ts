@@ -32,12 +32,7 @@ export interface WeatherSchema {
 
 export interface HoroscopoModel {
   name: string
-  img: string
   icon: string
-  personal: string
-  travel: string
-  money: string
-  career: string
-  health: string
-  emotions: string
+  title: string
+  content: string
 }

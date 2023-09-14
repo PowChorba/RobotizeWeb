@@ -37,12 +37,7 @@ export interface vMoreArticles {
 export interface HoroscopoModel {
   _id: string
   name: string
-  img: string
   icon: string
-  personal: string
-  travel: string
-  money: string
-  career: string
-  health: string
-  emotions: string
+  title: string
+  content: string
 }

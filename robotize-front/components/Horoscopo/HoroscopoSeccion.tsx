@@ -21,7 +21,6 @@ export default function HoroscopoSeccion({seccion, dataSection}: Props){
     const firstTwo = moreNews?.slice(0,2)
     const lastArticles = moreNews.slice(2, moreNews.length)
     
-    
     // Para traer mas notas 
     const getNews = async () => {
         const articlesPage: NewModel[] = await getMoreNews({'section': seccion, 'page': counter.toString()})

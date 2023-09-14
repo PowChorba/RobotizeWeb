@@ -9,10 +9,10 @@ export const getSectionNotes = async (section: string) => {
     }
 }
 
-export const getWeather = async () => {
+export const getHoroscopoWeakly = async (name: string) => {
     try {
-        const apiData = await axios.get(`${process.env.PETICION_BACK}/weather`)
-        return apiData.data         
+        const apiData = await axios.get(`${process.env.PETICION_BACK}/horoscopo/${name}`)
+        return apiData.data
     } catch (error) {
         console.log(error)
     }
