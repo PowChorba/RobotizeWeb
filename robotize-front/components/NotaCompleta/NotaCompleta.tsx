@@ -42,7 +42,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                         <br /><br />
                         <div className="flex justify-start items-center gap-4">
                             {
-                                data.tags.map(e => {
+                                data.tags?.map(e => {
                                     return <TagCard key={e} tag={e}/>
                                 })
                             }

@@ -11,14 +11,9 @@ export class HoroscopoService {
     async createHoroscopo(data: HoroscopoModel){
         const newHoroscopo = await this.horoscopoSchema.create({
             name: data.name,
-            img: data.img,
             icon: data.icon,
-            personal: data.personal,
-            travel: data.travel,
-            money: data.money,
-            career: data.career,
-            health: data.health,
-            emotions: data.emotions
+            personal: data.title,
+            travel: data.content
         })
 
         return newHoroscopo.save()
@@ -33,12 +28,8 @@ export class HoroscopoService {
             name: data.name
         })
 
-        if(data.personal) horoscopo.personal = data.personal
-        if(data.travel) horoscopo.travel = data.travel
-        if(data.money) horoscopo.money = data.money
-        if(data.career) horoscopo.career = data.career
-        if(data.health) horoscopo.health = data.health
-        if(data.emotions) horoscopo.emotions = data.emotions
+        if(data.title) horoscopo.title = data.title
+        if(data.content) horoscopo.content = data.content
 
         return horoscopo.save()
         
@@ -48,7 +39,6 @@ export class HoroscopoService {
         const horoscopo = await this.horoscopoSchema.findOne({
             name: name
         })
-
         if(horoscopo){
             return horoscopo
         }

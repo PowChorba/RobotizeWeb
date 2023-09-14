@@ -9,28 +9,14 @@ export class Horoscopo {
     name: string
 
     @Prop()
-    img: string
-
-    @Prop()
     icon:string
 
     @Prop()
-    personal: string
+    title: string
 
     @Prop()
-    travel: string
+    content: string
 
-    @Prop()
-    money: string
-
-    @Prop()
-    career: string
-
-    @Prop()
-    health: string
-
-    @Prop()
-    emotions: string
 }
 
 export const HoroscopoSchema = SchemaFactory.createForClass(Horoscopo)

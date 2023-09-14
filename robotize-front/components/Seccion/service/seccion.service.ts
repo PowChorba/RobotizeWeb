@@ -12,7 +12,7 @@ export const getMoreNews = async (data: vMoreArticles) => {
 
 export const getHoroscopo = async () => {
     try {
-        const apiData = await axios.get(`${process.env.PETICION_BACK}/horoscopo`)
+        const apiData = await axios.get(`${process.env.NEXT_PUBLIC_PETICION_BACK}/horoscopo`)
         return apiData.data
     } catch (error) {
         console.log(error)
