@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import { getDolar, getNews, getNewsSection, getWeatherCity } from "./service/home.service";
 import { DolarModel, NewModel } from "@/type";
 
-export const revalidate = 3600;
+export const revalidate = 600;
 
 export default async function HomeApp() {
   let data = await getNews('1')
