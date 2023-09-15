@@ -14,11 +14,14 @@ interface Props{
     dataPolitica: NewModel[]
     dataEconomia: NewModel[]
     dataDeportes: NewModel[]
+    dataSociedad: NewModel[]
 }
 
-export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes}: Props){
+export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes, dataSociedad}: Props){
     const recentNews = data.slice(0,6)
-    
+    const dataSociedadSplit = dataSociedad.slice(0,6)
+
+
     return(
             <>
             
@@ -44,7 +47,12 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                 {/* Esto va a la derecha, mostrando las ultimas noticias */}
                 <aside className="w-1/4 px-4 max-sm:hidden">
                     <h4 className="py-2 text-center border-b-2 border-[#441eae] text-[#441eae]">TENDENCIAS</h4>
-                    <LastCard/>
+                    {/* <LastCard/> */}
+                    {
+                        dataSociedadSplit.map(e => {
+                            return <LastCard key={e._id} title={e.title} section={e.section} _id={e._id}/>
+                        })
+                    }
                 </aside>
             </section>
             <section className="w-full py-4 border-b-2 border-[#441eae]">

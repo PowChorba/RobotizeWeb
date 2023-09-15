@@ -10,7 +10,7 @@ export default async function TagsApp({params}: any) {
     return (
         <>
             <Navbar />
-            <main className="w-1/2 mx-auto p-2 min-h-[70vh]">
+            <main className="w-1/2 mx-auto p-2 min-h-[70vh] max-sm:w-full">
                 <Tags data={data}/>
             </main>
             <div className="w-3/4 mx-auto"><Footer/></div>
