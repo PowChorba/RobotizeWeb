@@ -12,7 +12,7 @@ interface Props {
 
 export default function Tags({data}: Props){
     const [notFound,setNotFound] = useState<string>('No encontramos informacion relacionado a ese tag')
-    console.log(data.length, 'asdasdasda')
+
     return(<>
         {
             // data[0]?.title !== 'No hay nada con ese tag'
