@@ -7,7 +7,7 @@ interface vTitle{
 
 export const CardTitle = ({title, keytitle}:vTitle) => (
     <>
-      <h4 className="text-sm text-left pl-2 font-bold min-h-[40px] max-h-[40px] truncate-height"><span className="text-[#441eae]">{keytitle}</span>{'.'}{title}</h4>
+      <h4 className="text-sm text-left pl-2 font-bold min-h-[40px] max-h-[40px] truncate-height"><span className="text-[#441eae]">{keytitle}</span>{' '}{title}</h4>
       <style jsx>{`
         .truncate-height {
           display: -webkit-box;
