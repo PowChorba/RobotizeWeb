@@ -7,7 +7,7 @@ interface vTitle{
 
 export const CardTitle = ({title, keytitle}:vTitle) => (
     <>
-      <h4 className="text-sm text-left pl-2 font-bold min-h-[40px] max-h-[40px] truncate-height"><span className="text-[#441eae]">{keytitle}</span>{'.'}{title}</h4>
+      <h4 className="text-sm text-left pl-2 font-bold min-h-[40px] max-h-[40px] truncate-height"><span className="text-[#441eae]">{keytitle}</span>{' '}{title}</h4>
       <style jsx>{`
         .truncate-height {
           display: -webkit-box;
@@ -32,6 +32,20 @@ export const CardTitle = ({title, keytitle}:vTitle) => (
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 3;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );
+
+  export const CardTitleRight = ({title, keytitle}:vTitle) => (
+    <>
+      <h4 className="text-sm truncate-height font-semibold"><span className="text-[#441eae]">{keytitle}</span>{' '}{title}</h4>
+      <style jsx>{`
+        .truncate-height {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
           overflow: hidden;
         }
       `}</style>

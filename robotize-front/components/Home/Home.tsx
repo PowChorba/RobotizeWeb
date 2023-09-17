@@ -19,8 +19,12 @@ interface Props{
 
 export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes, dataSociedad}: Props){
     const recentNews = data.slice(0,6)
-    const dataSociedadSplit = dataSociedad.slice(0,6)
-
+    const dataSociedadSplit = dataSociedad.slice(0,5)
+    // Este slice es para asegurarme de tener siempre 8 notas en la seccion dentro de la home
+    // Porque sino cuando tengo 6 del mismo tema en las recente news, rompe la visual
+    dataEconomia = dataEconomia.slice(0,8)
+    dataDeportes = dataDeportes.slice(0,8)
+    dataPolitica = dataPolitica.slice(0,8)
 
     return(
             <>
@@ -50,7 +54,7 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                     {/* <LastCard/> */}
                     {
                         dataSociedadSplit.map(e => {
-                            return <LastCard key={e._id} title={e.title} section={e.section} _id={e._id}/>
+                            return <LastCard key={e._id} title={e.title} section={e.section} _id={e._id} date={e.date}/>
                         })
                     }
                 </aside>

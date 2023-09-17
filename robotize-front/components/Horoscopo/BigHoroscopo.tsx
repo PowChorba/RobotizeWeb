@@ -3,9 +3,11 @@ import { getHoroscopo } from "../Seccion/service/seccion.service"
 import CardHoroscopo from "./CardHorscopo"
 
 
+interface Props {
+    data: HoroscopoModel[]
+}
 
-export default async function BigHoroscopo(){
-    const data: HoroscopoModel[] = await getHoroscopo()
+export default function BigHoroscopo({data}: Props){
     
     return(
         <article className="grid grid-cols-6 gap-4">
