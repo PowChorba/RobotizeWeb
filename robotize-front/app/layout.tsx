@@ -21,6 +21,9 @@ export default function RootLayout({
   return (
     
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-6878767486653297"/>
+      </head>
       <body className={roboto_mono.className}>{children}</body>
     </html>
   )
