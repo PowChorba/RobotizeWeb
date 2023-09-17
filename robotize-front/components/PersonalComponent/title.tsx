@@ -37,3 +37,17 @@ export const CardTitle = ({title, keytitle}:vTitle) => (
       `}</style>
     </>
   );
+
+  export const CardTitleRight = ({title, keytitle}:vTitle) => (
+    <>
+      <h4 className="text-sm truncate-height font-semibold"><span className="text-[#441eae]">{keytitle}</span>{' '}{title}</h4>
+      <style jsx>{`
+        .truncate-height {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );

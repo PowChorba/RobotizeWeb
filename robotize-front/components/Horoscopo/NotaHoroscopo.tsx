@@ -31,14 +31,6 @@ export default function NotaHoroscopo({data, seccion, dataSection}: Props){
                     <Image src={Robotize} alt='Icono' width={50} height={50} className="rounded-[50%]"/>
                     <span>Por <strong>Robotize</strong></span>
                 </div>
-                {/* <Image src={img} alt={data.name} width={100} height={100} className="w-2/6 max-sm:w-full py-2 mx-auto"/>
-                <p><strong>Emociones: </strong>{data.emotions}</p>
-                <p><strong>Carrera: </strong>{data.career}</p>
-                <p><strong>Salud: </strong>{data.health}</p>
-                <p><strong>Dinero y Fortuna: </strong>{data.money}</p>
-                <p><strong>Vida Social: </strong>{data.personal}</p>
-                <p><strong>Viajes: </strong>{data.travel}</p> */}
-                {/* <p>{data.content}</p> */}
                 <p className="w-full mx-auto text-left" dangerouslySetInnerHTML={{ __html: data.content }}></p>
             </article>
             <h4 className="font-semibold text-lg">Te puede interesar</h4>
