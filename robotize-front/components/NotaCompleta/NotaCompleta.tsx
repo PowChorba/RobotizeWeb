@@ -20,7 +20,9 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
     seccion = seccion[0].toUpperCase() + seccion.substring(1)
 
     const filterNota = dataSection?.filter(e => e.title !== data?.title)
-
+    // Hago un slice porque a veces GPT flashea y le crea 10 tags, entonces me rompe la visual
+    // Con este slice solamente agarro los primero dos que llegen en el array (por default vienen 2)
+    const tags = data.tags.slice(0,2)
     return(
         <section>
             {
@@ -42,7 +44,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                         <br /><br />
                         <div className="flex justify-start items-center gap-4">
                             {
-                                data.tags?.map(e => {
+                                tags?.map(e => {
                                     return <TagCard key={e} tag={e}/>
                                 })
                             }
