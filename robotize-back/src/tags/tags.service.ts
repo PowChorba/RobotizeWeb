@@ -12,7 +12,7 @@ export class TagsService {
 
         const findNews = await this.newsModel.find({
             tags: tag
-        })
+        }).sort({createdAt: -1})
 
         if(findNews){
             return findNews
