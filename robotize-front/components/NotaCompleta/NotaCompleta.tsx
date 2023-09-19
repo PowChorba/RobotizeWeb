@@ -6,6 +6,7 @@ import { NewModel } from "@/type";
 import Robotize from '../../assets/robotizeicono.jpeg'
 import NotFound from "../NotFound/NotFound";
 import TagCard from "../NewsCard/TagCard";
+import { contentCompletee } from "./service/notaCompleta.service";
 
 interface Props {
     data: NewModel
@@ -14,8 +15,7 @@ interface Props {
 }
 
 export default function NotaCompleta({data, seccion, dataSection}: Props){
-    const contentComplete = data.content?.replace(/ESPACIO/g, '<br><br>')
-
+    const contentComplete = contentCompletee(data.tags,data.content)
     // Primer letra en mayuscula
     seccion = seccion[0].toUpperCase() + seccion.substring(1)
 
