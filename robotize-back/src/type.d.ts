@@ -36,3 +36,8 @@ export interface HoroscopoModel {
   title: string
   content: string
 }
+
+export interface CounterModel {
+  counter: number
+  name: string
+}
