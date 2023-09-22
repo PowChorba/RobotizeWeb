@@ -41,3 +41,7 @@ export interface HoroscopoModel {
   title: string
   content: string
 }
+
+export interface CounterNewsModel {
+  counter: number
+}
