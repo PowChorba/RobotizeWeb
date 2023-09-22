@@ -15,7 +15,7 @@ export class CounterService {
 
     async getCounter(){
         return this.counterSchema.find({
-            name: 'contadorNews'
+            name: 'counterNews'
         })
     }
 
