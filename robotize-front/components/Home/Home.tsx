@@ -5,7 +5,7 @@ import SectionPolitica from "./Politica/Politica";
 import SectionDeportes from "./Deportes/Deportes";
 import SectionNoticias from "./Economia/Economia";
 import Footer from "../Footer/Footer";
-import { DolarModel, NewModel } from "@/type";
+import { CounterNewsModel, DolarModel, NewModel } from "@/type";
 
 interface Props{
     data: NewModel[]
@@ -15,9 +15,10 @@ interface Props{
     dataEconomia: NewModel[]
     dataDeportes: NewModel[]
     dataSociedad: NewModel[]
+    counterNews: CounterNewsModel
 }
 
-export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes, dataSociedad}: Props){
+export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEconomia, dataDeportes, dataSociedad, counterNews}: Props){
     const recentNews = data.slice(0,6)
     const dataSociedadSplit = dataSociedad.slice(0,5)
     // Este slice es para asegurarme de tener siempre 8 notas en la seccion dentro de la home
@@ -33,10 +34,11 @@ export default function Home({data, dataDolar, weatherCity, dataPolitica, dataEc
                     <div className="flex text-left gap-6">
                     <Link href='/economia' className="lg:text-sm">Dólar oficial <strong>${dataDolar[1].sell}</strong></Link>
                     <Link href='/economia' className="lg:text-sm">Dólar blue <strong>${dataDolar[0].sell}</strong></Link>
-                    <Link href='/economia' className="lg:text-sm">Dólar Bolsa <strong>${dataDolar[2].sell}</strong></Link>
-                    <Link href='/economia' className="lg:text-sm">Dólar CCL <strong>${dataDolar[3].sell}</strong></Link>
+                    {/* <Link href='/economia' className="lg:text-sm">Dólar Bolsa <strong>${dataDolar[2].sell}</strong></Link>
+                    <Link href='/economia' className="lg:text-sm">Dólar CCL <strong>${dataDolar[3].sell}</strong></Link> */}
                     </div>
                     <Link href='/clima' className="lg:text-sm">Capital Federal <strong>{weatherCity}</strong></Link>
+                    <p className="lg:text-sm">Notas automatizadas: <span className='font-bold'>{counterNews.counter}</span></p>
                 </div>
                 <h3 className="px-2 text-lg hidden max-sm:block py-2 text-[#441eae] font-bold">Noticias destacadas</h3>
             <section className="flex w-full py-10 border-b-2 border-[#441eae] max-sm:py-4">

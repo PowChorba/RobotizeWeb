@@ -1,7 +1,7 @@
 // 'use client'
 import Home from "@/components/Home/Home";
 import Navbar from "@/components/Navbar/Navbar";
-import { getDolar, getNews, getNewsSection, getWeatherCity } from "./service/home.service";
+import { getDolar, getNews, getNewsCounter, getNewsSection, getWeatherCity } from "./service/home.service";
 import { DolarModel, NewModel } from "@/type";
 
 export const revalidate = 200;
@@ -26,12 +26,14 @@ export default async function HomeApp() {
   // Traigo las de sociedad que van a ir al costado
   let dataSociedad = await getNewsSection('sociedad')
 
+  // Counter de todas las noticias que hay en la base de datos
+  const counterNews = await getNewsCounter()
 
   return (
     <>
       <Navbar />
       <main className="w-3/4 mx-auto p-2 max-sm:w-full">
-        <Home data={data} dataDolar={dataDolar} weatherCity={weatherCity} dataDeportes={dataDeportes} dataEconomia={dataEconomia} dataPolitica={dataPolitica} dataSociedad={dataSociedad}/>
+        <Home data={data} dataDolar={dataDolar} weatherCity={weatherCity} dataDeportes={dataDeportes} dataEconomia={dataEconomia} dataPolitica={dataPolitica} dataSociedad={dataSociedad} counterNews={counterNews[0]}/>
       </main>
     </>
   );

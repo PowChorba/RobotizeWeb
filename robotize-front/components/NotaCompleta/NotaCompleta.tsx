@@ -3,7 +3,7 @@ import Link from "next/link";
 import RelacionCard from "./RelacionCard/RelacionCard";
 import Footer from "../Footer/Footer";
 import { NewModel } from "@/type";
-import Robotize from '../../assets/robotizeicono.jpeg'
+import Robotize from '../../assets/imagenPerfil.jpg'
 import NotFound from "../NotFound/NotFound";
 import TagCard from "../NewsCard/TagCard";
 import { contentCompletee } from "./service/notaCompleta.service";
