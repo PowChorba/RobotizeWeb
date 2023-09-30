@@ -39,7 +39,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                             <Image src={Robotize} alt='Icono' width={50} height={50} className="rounded-[50%]"/>
                         <span>Por <strong>Robotize</strong></span>
                         </div>
-                        <Image src={data.img} alt="asd" width={200} height={200} className="w-4/6 max-sm:w-full py-2 mx-auto"/>
+                        <img src={data.img} alt="asd" width={200} height={200} className="w-4/6 max-sm:w-full py-2 mx-auto"/>
                         { contentComplete && <p className="w-full mx-auto text-left" dangerouslySetInnerHTML={{ __html: contentComplete }}></p>}
                         <br /><br />
                         <div className="flex justify-start items-center gap-4">
