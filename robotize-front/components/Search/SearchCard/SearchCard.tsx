@@ -13,7 +13,7 @@ interface Props {
 export default function SearchCard({_id,img,keytitle,pretitle, section}: Props){
     return(
         <Link href={`/${section}/${_id}`} className="border-2 rounded-lg flex justify-left items-center">
-            <Image src={img} alt={keytitle} width={150} height={150} className="mr-4"/>
+            <img src={img} alt={keytitle} width={150} height={150} className="mr-4"/>
             <CardTitle title={pretitle} keytitle={keytitle} />
             {/* <span>{section.toLocaleUpperCase()}</span> */}
         </Link>)
