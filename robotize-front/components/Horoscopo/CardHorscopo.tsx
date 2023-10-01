@@ -15,6 +15,6 @@ export default function CardHoroscopo({name,icon,section,_id}: Props){
     return (
         <Link href={`/${section}/${name}`} className="flex justify-center items-center border-2 gap-4 rounded-lg">
             <img src={iconReplace} alt={name} width={50} height={50}/> 
-            <h3>{name}</h3>
+            <h3 className="max-lg:hidden">{name}</h3>
         </Link>)
 }
