@@ -4,6 +4,20 @@ import NotaCompleta from "@/components/NotaCompleta/NotaCompleta";
 import { getArticle } from "./service/article.service";
 import { getSectionNotes } from "../service/section.service";
 import NotFound from "@/components/NotFound/NotFound";
+import { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: { title: string,seccion: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+      const dataTitle = await getArticle(params.title,params.seccion)
+      return {
+          title: dataTitle.title,
+        }
+  }
+
 
 
 export default async function NotaApp({params}:any){
