@@ -25,6 +25,18 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6878767486653297"/>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878767486653297"
          crossOrigin="anonymous"></script>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XP02Q0MEQ"></script>
+        <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-8XP02Q0MEQ');
+              `,
+            }}
+          />
       </head>
       <body className={roboto_mono.className}>{children}</body>
     </html>
