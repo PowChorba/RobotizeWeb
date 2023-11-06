@@ -17,7 +17,7 @@ export default function Footer(){
             <span>Copyright 2023 | Todos los derechos reservados</span>
             </div>
             <div className="text-center flex justify-center gap-2">
-                <Link href='https://www.linkedin.com/in/robotize-rpa-4177ab287/' target="_blank"><AiFillLinkedin className='text-2xl'/></Link>
+                <Link href='https://www.linkedin.com/company/robotizeit/' target="_blank"><AiFillLinkedin className='text-2xl'/></Link>
                 <Link href='https://twitter.com/AutoDolar' target="_blank"><AiOutlineTwitter className='text-2xl'/></Link>
                 <AiFillMail className='text-2xl'/>
             </div>

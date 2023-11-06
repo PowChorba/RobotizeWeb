@@ -51,3 +51,17 @@ export const CardTitle = ({title, keytitle}:vTitle) => (
       `}</style>
     </>
   );
+
+  export const CardAdminCMSTitle = ({title}:{title:string}) => (
+    <>
+      <h4 className="text-sm truncate-height font-semibold cursor-pointer">{title}</h4>
+      <style jsx>{`
+        .truncate-height {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );

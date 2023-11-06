@@ -19,7 +19,7 @@ export default function SideBar({setSidebar, sidebar}: Props){
                 <li><Link href='/politica' className='font-bold text-lg'>Politica</Link></li>
                 <li><Link href='/economia' className='font-bold text-lg'>Economia</Link></li>
                 <li><Link href='/deportes' className='font-bold text-lg'>Deportes</Link></li>
-                <li><Link href='/horoscopo' className='font-bold text-lg'>Horoscopo</Link></li>
+                <li><Link href='/zodiaco' className='font-bold text-lg'>Horoscopo</Link></li>
                 <li><Link href='/policial'className='font-bold text-lg'>Policiales</Link></li>
                 <li><Link href='/clima'className='font-bold text-lg'>Clima</Link></li>
             </ul>
