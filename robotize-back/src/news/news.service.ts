@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { News } from './news.schema';
 import { Model } from 'mongoose';
-import { CreateNew, NewsSectionModel } from 'src/type';
+import { CreateNew, NewsSectionModel, NewsUpdatedModel } from 'src/type';
 
 @Injectable()
 export class NewsService {
@@ -31,6 +31,10 @@ export class NewsService {
         const allNews = await this.newsModel.find().sort({createdAt: -1}).skip(skip).limit(limit).exec()
 
         return allNews
+    }
+
+    async findAll(){
+        return this.newsModel.find()
     }
 
     async findNewsTitle(title:string){
@@ -73,5 +77,24 @@ export class NewsService {
             return news
         }
         return [{title: 'No hay data'}]
+    }
+
+    async updateArticle(data: NewsUpdatedModel){
+        const article = await this.newsModel.updateOne({
+            _id: data._id
+        }, {
+            $set: {
+                title: data.title,
+                summary: data.summary,
+                content: data.content,
+                img: data.img,
+                date: data.date,
+                section: data.section,
+                tags: data.tags
+            }
+        })
+
+        return 'updated'
+
     }
 }

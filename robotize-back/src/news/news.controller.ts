@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { NewsService } from './news.service';
 import { CreateNew } from 'src/type';
 
@@ -14,6 +14,11 @@ export class NewsController {
     @Get(':page')
     getNews(@Param('page') page:string){
         return this.newsService.findNews(page)
+    }
+
+    @Get()
+    getAll(){
+        return this.newsService.findAll()
     }
 
     @Get('/article/:title')
@@ -34,6 +39,11 @@ export class NewsController {
     @Get('/search')
     getSearchNews(@Query('keyword') keyword: string){
         return this.newsService.findByKeyWork(keyword)
+    }
+
+    @Patch('/:id')
+    updateArticle(@Param('id') id: number, @Body() body){
+        return this.newsService.updateArticle(body)
     }
 
 }

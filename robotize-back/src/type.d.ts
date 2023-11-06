@@ -41,3 +41,15 @@ export interface CounterModel {
   counter: number
   name: string
 }
+
+export interface NewsUpdatedModel {
+  _id: string
+  title: string;
+  summary: string;
+  content: string;
+  img: string;
+  section: string;
+  date: string;
+  tags: string[]
+}
+
