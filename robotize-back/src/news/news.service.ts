@@ -18,7 +18,8 @@ export class NewsService {
             section: data.section,
             keytitle: data.keytitle,
             pretitle: data.pretitle,
-            tags: data.tags
+            tags: data.tags,
+            publico: data.publico
         })
         console.log(news.tags, data.tags)
         return news.save()
