@@ -48,7 +48,7 @@ export default function HoroscopoSeccion({seccion, dataSection, data}: Props){
             <article className="grid grid-cols-4 gap-10 py-4 max-sm:grid-cols-2">
                 {
                     lastArticles.map(e => {
-                        return <RelacionCard key={e._id} img={e.img} _id={e._id} section={e.section} keytitle={e.keytitle} pretitle={e.pretitle}/>
+                        return <RelacionCard key={e._id} img={e.img} _id={e._id} section={e.section} keytitle={e.keytitle} pretitle={e.pretitle} title={e.title}/>
                     })
                 }
             </article>
