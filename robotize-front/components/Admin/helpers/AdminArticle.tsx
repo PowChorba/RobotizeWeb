@@ -90,7 +90,7 @@ export default function AdminFullArticle({data, seccion}: Props){
                         {/* Bajada */}
                         {/* <p className="text-lg lg:text-sm text-center max-sm:text-sm">{data.summary}</p> */}
                         <h4>Bajada:</h4>
-                        <textarea name='summary'  value={article.subtitle} cols={30} rows={2} onChange={handleChange} className="text-lg lg:text-sm text-center max-sm:text-sm border-2 border-[#441eae] p-2"/>
+                        <textarea name='subtitle'  value={article.subtitle} cols={30} rows={2} onChange={handleChange} className="text-lg lg:text-sm text-center max-sm:text-sm border-2 border-[#441eae] p-2"/>
                         <p className="text-[#5a5a5a] lg:text-xs max-sm:text-xs">{data.date}</p>
                         <Image src={data.img} alt="asd" width={800} height={400} unoptimized className="max-sm:w-full py-2 mx-auto"/>
                         {/* { contentComplete && <p className="w-full mx-auto text-left" dangerouslySetInnerHTML={{ __html: contentComplete }}></p>} */}

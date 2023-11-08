@@ -1,6 +1,6 @@
 export function convertDate(input: string): string {
     const dateArray = input.split(' ');
-    console.log(dateArray, 'DATE ARRAY')
+
     // Mapear nombres de meses a números
     const months: { [key: string]: string } = {
       enero: '01', febrero: '02', marzo: '03', abril: '04', mayo: '05', junio: '06',
@@ -19,3 +19,10 @@ export function convertDate(input: string): string {
   
     return formattedDate;
   }
+
+ 
+export const getSections = (section: string) => {
+  let allSection = ['deportes', 'clima', 'zodiaco', 'policial', 'politica','economia']
+  allSection = allSection.filter(e => e != section)
+  return allSection
+}

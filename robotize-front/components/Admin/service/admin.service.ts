@@ -20,3 +20,12 @@ export const getAllAdmin = async (counter:string) => {
         console.log(error)
     }
 }
+
+export const deleteArticle = async (_id: string) => {
+    try {
+        const apiData = await axios.delete(`${process.env.NEXT_PUBLIC_PETICION_BACK}/news/${_id}`)
+        return apiData.data
+    } catch (error) {
+        console.log(error)
+    }
+}

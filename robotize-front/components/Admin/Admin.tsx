@@ -58,8 +58,8 @@ export default function Admin({data}: Props){
                         <p className="font-bold">Zonas</p>
                     </div>
                     {
-                        search === '' ? moreNews.map(e => {return <AdminCMS key={e._id} _id={e._id} section={e.section} title={e.title} date={e?.date}/>})
-                        : dataFilter.map(e => {return <AdminCMS key={e._id} _id={e._id} section={e.section} title={e.title} date={e?.date}/>})
+                        search === '' ? moreNews.map(e => {return <AdminCMS key={e._id} _id={e._id} section={e.section} title={e.title} date={e.date} publico={e.publico}/>})
+                        : dataFilter.map(e => {return <AdminCMS key={e._id} _id={e._id} section={e.section} title={e.title} date={e.date} publico={e.publico}/>})
                     }
                 </div>
                 {
