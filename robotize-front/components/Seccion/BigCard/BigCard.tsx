@@ -12,10 +12,11 @@ interface Props {
 }
 
 export default function BigCard({img,title,date, keytitle, pretitle, section,_id}: Props){
-    let titleUrl = title?.replace(/ /g, "-")
+    let titleURL = title.toLowerCase().replaceAll(' ', '-')
+    titleURL = titleURL + '.html'
     
     return(
-        <Link href={`/${section}/${_id}`}>
+        <Link href={`/${section}/${titleURL}`}>
             <img src={img} alt={title} width={200} height={200} className="w-full"/>
             <h2 className="font-bold text-2xl lg:text-lg py-2"><span className="text-[#441eae]">{keytitle}</span> {pretitle}</h2>
             <span className="text-sm">Por <strong>Robotize</strong></span>

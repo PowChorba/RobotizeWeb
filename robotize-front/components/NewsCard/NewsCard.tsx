@@ -15,9 +15,11 @@ interface Props {
 }
 
 export default function NewsCard({_id,title,subtitle,img,date,content,section, keytitle, pretitle}: Props){
+    let titleURL = title.toLowerCase().replaceAll(' ', '-')
+    titleURL = titleURL + '.html'
 
     return(
-        <Link href={`/${section}/${_id}`} className="text-center">
+        <Link href={`/${section}/${titleURL}`} className="text-center">
             {/* Titulo */}
             <img src={img} alt="asd" width={200} height={200} className="w-full p-2 min-h-[150px] lg:min-h-[150px]"/>
             <CardTitle title={pretitle} keytitle={keytitle}/>

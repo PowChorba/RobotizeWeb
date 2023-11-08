@@ -59,4 +59,5 @@ export interface ArticlesCMSType {
   img: string
   section: string
   date: string
+  publico: boolean
 }
