@@ -8,6 +8,7 @@ export interface CreateNew {
   keytitle:string
   pretitle: string
   tags: string[]
+  publico: boolean
 }
 
 export interface CreateDolar {

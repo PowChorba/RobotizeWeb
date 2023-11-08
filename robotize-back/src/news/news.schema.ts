@@ -32,6 +32,9 @@ export class News {
     @Prop()
     tags: string[]
 
+    @Prop()
+    publico: boolean
+
 }
 
 export const NewsSchema = SchemaFactory.createForClass(News)
