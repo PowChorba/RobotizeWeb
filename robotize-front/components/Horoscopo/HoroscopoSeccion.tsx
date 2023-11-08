@@ -37,7 +37,7 @@ export default function HoroscopoSeccion({seccion, dataSection, data}: Props){
     return(
         <section>
             <p className="text-2xl py-4"><strong>{seccion.toUpperCase()}</strong></p>
-            <BigHoroscopo data={data}/>
+            {/* <BigHoroscopo data={data}/> */}
                 <article className="grid grid-cols-2 gap-10 border-b-2 py-4 max-sm:grid-cols-1">
                 {firstTwo.map((e) => {
                     return (

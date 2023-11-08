@@ -1,22 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
+export {default} from 'next-auth/middleware'
 
-export async function middleware(request: NextRequest) {
+// export 
 
-  const requestHeader = new Headers(request.headers);
-  requestHeader.set("Noticias-Robotize", "Welcome");
+// export async function middleware(request: NextRequest) {
 
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeader,
-    },
-  });
+//   const config = {
+//     matcher: ['/admin/:path*', '/admin']
+//   }
 
-  // if (request.nextUrl.pathname.endsWith("/horoscopo") && request.nextUrl.pathname.includes("/horoscopo")) {
-  //   return NextResponse.redirect(new URL("/home", request.url));
-  // }
-  if(request.nextUrl.pathname.endsWith('/zodiaco')){
-    return NextResponse.redirect(new URL("/horoscopo", request.url));
-  }
+//   const requestHeader = new Headers(request.headers);
+//   requestHeader.set("Noticias-Robotize", "Welcome");
 
+//   if(request.nextUrl.pathname.endsWith('/zodiaco')){
+//     return NextResponse.redirect(new URL("/horoscopo", request.url));
+//   }
+
+//   const response = NextResponse.next();
+//   response.headers.set("Noticias-Robotize", "Welcome");
 //   return response;
+
+// //   return response;
+// }
+
+export const config = {
+  matcher: ['/admin/:path*', '/admin']
 }
+
+// export async function middleware(request: NextRequest) {
+
+//     if(request.nextUrl.pathname.endsWith('/zodiaco')){
+//     return NextResponse.redirect(new URL("/horoscopo", request.url));
+//   }
+// }

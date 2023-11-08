@@ -45,3 +45,19 @@ export interface HoroscopoModel {
 export interface CounterNewsModel {
   counter: number
 }
+
+export interface ArticlesCardType {
+  _id: string
+  title: string
+  img: string
+  section: string
+}
+
+export interface ArticlesCMSType {
+  _id: string
+  title: string
+  img: string
+  section: string
+  date: string
+  publico: boolean
+}

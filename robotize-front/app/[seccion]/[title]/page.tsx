@@ -1,10 +1,8 @@
-import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import NotaCompleta from "@/components/NotaCompleta/NotaCompleta";
 import { getArticle } from "./service/article.service";
 import { getSectionNotes } from "../service/section.service";
-import NotFound from "@/components/NotFound/NotFound";
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 
 type Props = {
     params: { title: string,seccion: string }
@@ -19,8 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
 
-
-export default async function NotaApp({params}:any){
+export default async function NotaApp({params}:Props){
     const data = await getArticle(params.title,params.seccion)
     const dataSection = await getSectionNotes(params.seccion)
 
@@ -34,7 +31,7 @@ export default async function NotaApp({params}:any){
                 <meta name="twitter:image" content={data.img}/>
             </head>
             <Navbar/>
-            <main className="w-3/4 mx-auto p-2 max-sm:w-full">
+            <main className="w-full mx-auto p-2 max-sm:w-full">
                 <NotaCompleta data={data} seccion={params.seccion} dataSection={dataSection}/>
             </main>
         </>)

@@ -3,7 +3,7 @@ import Seccion from "@/components/Seccion/Seccion";
 import { getDolar } from "../home/service/home.service";
 import { getSectionNotes, getWeather } from "./service/section.service";
 
-export default async function SecctionApp({params}: any){
+export default async function SecctionApp({params}: {params: {seccion: string}}){
     const dataDolar = await getDolar()
     const dataWeather = await getWeather()
     const dataSection = await getSectionNotes(params.seccion)

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { News } from './news.schema';
 import { Model } from 'mongoose';
-import { CreateNew, NewsSectionModel } from 'src/type';
+import { CreateNew, NewsSectionModel, NewsUpdatedModel } from 'src/type';
 
 @Injectable()
 export class NewsService {
@@ -21,7 +21,6 @@ export class NewsService {
             tags: data.tags,
             publico: data.publico
         })
-        console.log(news.tags, data.tags)
         return news.save()
     }
 
@@ -34,11 +33,18 @@ export class NewsService {
         return allNews
     }
 
-    async findNewsTitle(title:string){
-        const news = await this.newsModel.findOne({
-            _id: title
-        })
+    async findAll(){
+        return this.newsModel.find()
+    }
 
+    async findNewsTitle(title:string){
+        title = title.replace('-', ' ')
+        title = title.replace('.html', '')
+        const news = await this.newsModel.findOne({
+            // title: `/^${title}/`
+            title: { $regex: `^${title}`, $options: 'i' }
+        })
+        console.log(news)
         if(news){
             return news
         }
@@ -49,7 +55,7 @@ export class NewsService {
         const limit = 10
         const skip = (parseInt(data.page) - 1) * limit
 
-        const allNews = await this.newsModel.find({section:data.section}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+        const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
         if(allNews.length === 0){
             return [{title: 'No hay mas data'}]
         }
@@ -61,7 +67,7 @@ export class NewsService {
         const limit = 14
         const skip = (parseInt(data.section) - 1) * limit
 
-        const allNews = await this.newsModel.find({section:data.section}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+        const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
 
         return allNews
 
@@ -75,4 +81,42 @@ export class NewsService {
         }
         return [{title: 'No hay data'}]
     }
+
+    async updateArticle(data: NewsUpdatedModel){
+        await this.newsModel.updateOne({
+            _id: data._id
+        }, {
+            $set: {
+                title: data.title,
+                summary: data.summary,
+                content: data.content,
+                img: data.img,
+                date: data.date,
+                section: data.section,
+                tags: data.tags
+            }
+        })
+
+        return 'updated'
+
+    }
+
+    async deleteNews(id: string) {
+        try{
+            console.log(id)
+            const article = await this.newsModel.deleteOne({
+                _id: id
+            })
+            console.log(article)
+            return 'Deleted'
+            
+        }
+        catch(e){
+            return 'Error on Delete'
+        }    
+    }
+
+    // async updateNewParameterInArticles(publico: boolean): Promise<void> {
+    //     await this.newsModel.updateMany({}, { $set: { publico } }).exec();
+    //   }
 }

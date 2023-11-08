@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { NewsService } from './news.service';
 import { CreateNew } from 'src/type';
 
@@ -14,6 +14,11 @@ export class NewsController {
     @Get(':page')
     getNews(@Param('page') page:string){
         return this.newsService.findNews(page)
+    }
+
+    @Get()
+    getAll(){
+        return this.newsService.findAll()
     }
 
     @Get('/article/:title')
@@ -36,4 +41,19 @@ export class NewsController {
         return this.newsService.findByKeyWork(keyword)
     }
 
+    @Patch('/:id')
+    updateArticle(@Param('id') id: number, @Body() body){
+        return this.newsService.updateArticle(body)
+    }
+
+    @Delete('/:id')
+    deleteArticle(@Param('id') id: string){
+        return this.newsService.deleteNews(id);
+    }
+
+    // @Post('update-new-parameter')
+    // async updateNewParameter(): Promise<void> {
+    // const newParameter = true; // Set your desired default value
+    // await this.newsService.updateNewParameterInArticles(newParameter);
+//   }
 }
