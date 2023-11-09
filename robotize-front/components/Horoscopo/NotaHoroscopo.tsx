@@ -37,7 +37,7 @@ export default function NotaHoroscopo({data, seccion, dataSection}: Props){
             <article className="border-t-2 grid grid-cols-5 text-center gap-6 border-b-2 border-[#441eae] py-4 max-sm:grid-cols-3">
                 {
                     dataSection.map(e => {
-                        return <RelacionCard key={e._id} img={e.img} keytitle={e.keytitle} pretitle={e.pretitle} section={e.section} _id={e._id}/>
+                        return <RelacionCard key={e._id} img={e.img} keytitle={e.keytitle} pretitle={e.pretitle} section={e.section} _id={e._id} title={e.title}/>
                     })
                 }
             </article>
