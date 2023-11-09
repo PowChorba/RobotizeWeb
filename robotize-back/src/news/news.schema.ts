@@ -34,7 +34,6 @@ export class News {
 
     @Prop()
     publico: boolean
-
 }
 
 export const NewsSchema = SchemaFactory.createForClass(News)

@@ -38,7 +38,7 @@ export const getNewsSection = async (section: string) => {
 
 export const getNewsCounter = async () => {
     try {
-        const apiData = await axios.get(`${process.env.NEXT_PUBLIC_PETICION_BACK}/counter`)
+        const apiData = await axios.get(`${process.env.PETICION_BACK}/counter`)
         return apiData.data
     } catch (error) {
         console.log(error)
