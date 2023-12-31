@@ -21,7 +21,7 @@ export class NewsService {
             tags: data.tags,
             publico: data.publico
         })
-        return news.save()
+        return { "article":news.save(), "status": "ok"}
     }
 
     async findNews(page: string){
