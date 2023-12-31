@@ -61,3 +61,17 @@ export interface ArticlesCMSType {
   date: string
   publico: boolean
 }
+
+
+export interface CreateArticle {
+  title: string;
+  subtitle: string;
+  content: string;
+  img: string;
+  section: string;
+  date: string;
+  keytitle:string
+  pretitle: string
+  tags: string[]
+  publico: boolean
+}
