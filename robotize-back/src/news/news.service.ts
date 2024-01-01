@@ -67,9 +67,16 @@ export class NewsService {
         const limit = 14
         const skip = (parseInt(data.section) - 1) * limit
 
-        const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+        if(data.section === 'rpa'){
+            const allNews = await this.newsModel.find({section:data.section, publico: false}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+            return allNews
+        }
+        else{
+            const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+            return allNews
+        }
 
-        return allNews
+        
 
     } 
 
