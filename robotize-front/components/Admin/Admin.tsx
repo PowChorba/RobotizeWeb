@@ -5,6 +5,7 @@ import { useState } from "react"
 import { getAllAdmin } from "./service/admin.service"
 import { useRouter } from "next/navigation"
 import AdminCMS from "./helpers/AdminPrueba"
+import Link from "next/link"
 
 
 interface Props {
@@ -45,6 +46,7 @@ export default function Admin({data}: Props){
                     <div className="flex justify-center items-center gap-4">
                     <h2 className="font-bold text-6xl cursor-pointer text-[#441eae] max-sm:text-4xl" onClick={() => router.push('/home')}>Robotize</h2>
                     </div>
+                    <Link href='/admin/create' className="bg-robotize text-white p-2 rounded-lg">Create Article</Link>
                     <div>
                         <input type="text" value={search} placeholder="Busca el titulo maricon" onChange={handleSearch} className="rounded-lg border-2 border-[#441eae] px-4"/>
                     </div>
