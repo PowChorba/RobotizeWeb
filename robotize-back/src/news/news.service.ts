@@ -55,11 +55,17 @@ export class NewsService {
         const limit = 10
         const skip = (parseInt(data.page) - 1) * limit
 
-        const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
-        if(allNews.length === 0){
-            return [{title: 'No hay mas data'}]
+        if(data.section === 'rpa') {
+            const allNews = await this.newsModel.find({section:data.section, publico: false}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+            return allNews
         }
-        return allNews
+        else {
+            const allNews = await this.newsModel.find({section:data.section, publico: true}).sort({createdAt: -1}).skip(skip).limit(limit).exec()
+            if(allNews.length === 0){
+                return [{title: 'No hay mas data'}]
+            }
+            return allNews
+        }
 
     }
 
