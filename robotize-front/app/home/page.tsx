@@ -8,7 +8,7 @@ export const revalidate = 200;
 
 export default async function HomeApp() {
   let data = await getNews('1')
-  data = data.filter((e:NewModel) => e.section !== 'sociedad')
+  data = data.filter((e:NewModel) => e.section !== 'sociedad' && e.publico !== false)
   let titleData = data.map((e:NewModel) => e.title).splice(0,6)
   // titleData = titleData.splice(0,6)
   const dataDolar = await getDolar()

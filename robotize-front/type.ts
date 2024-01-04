@@ -9,6 +9,7 @@ export interface NewModel {
   date: string;
   section: string;
   tags: string[]
+  publico: boolean
 }
 
 export interface DolarModel {
