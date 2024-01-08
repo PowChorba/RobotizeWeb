@@ -39,14 +39,14 @@ export class NewsService {
     }
 
     async findNewsTitle(title:string){
-        title = title.replace('-', ' ')
+        title = title.replaceAll('-', ' ')
         title = title.replace('.html', '')
         const news = await this.newsModel.findOne({
             // title: `/^${title}/`
             title: { $regex: `^${title}`, $options: 'i' }
         })
-        console.log(news)
         if(news){
+
             return news
         }
         return {title:'News not found'}
