@@ -39,7 +39,8 @@ export default function RootLayout({
             }}
           />
       </head>
-      <body className={roboto_mono.className}><Providers>{children}</Providers></body>
+      <body className={roboto_mono.className}><Providers><script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+      <script src="https://mediafiles.botpress.cloud/4ff505f2-01cd-418e-b4b6-0f87564fecb8/webchat/config.js" defer></script>{children}</Providers></body>
     </html>
   )
 }
