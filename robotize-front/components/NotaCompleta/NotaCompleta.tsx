@@ -28,7 +28,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
             {
                 data.title !== 'News not found'
                 ? <>
-                    <article className="w-3/4 mx-auto py-4 flex flex-col gap-4">
+                    <article className="w-3/4 mx-auto py-4 flex flex-col gap-4 max-sm:w-full max-sm:px-2">
                         <p className="pb-6 text-lg text-left"><Link href='/'>Robotize</Link> {'>'} <Link href={`/${seccion.toLowerCase()}`}>{seccion}</Link></p>
                         {/* Titulo */}
                         <h2 className="text-4xl lg:text-2xl font-bold text-center max-sm:text-2xl">{data.title}</h2>
@@ -39,7 +39,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                             <Image src={Robotize} alt='Icono' width={50} height={50} className="rounded-[50%]"/>
                         <span>Por <strong>Robotize</strong></span>
                         </div>
-                        <img src={data.img} alt="asd" width={200} height={200} className="w-3/4 py-2 mx-auto"/>
+                        <img src={data.img} alt="asd" width={200} height={200} className="w-3/4 py-2 mx-auto max-sm:w-full"/>
                         { contentComplete && <p className="w-full mx-auto text-left" dangerouslySetInnerHTML={{ __html: contentComplete }}></p>}
                         <br /><br />
                         <div className="flex justify-start items-center gap-4">
@@ -51,7 +51,7 @@ export default function NotaCompleta({data, seccion, dataSection}: Props){
                         </div>
                     </article>
                         <h4 className="w-3/4 mx-auto font-semibold text-lg">Te puede interesar</h4>
-                    <article className="w-3/4 mx-auto border-t-2 grid grid-cols-5 text-center gap-6 border-b-2 border-[#441eae] py-4 max-sm:grid-cols-3">
+                    <article className="w-3/4 mx-auto border-t-2 grid grid-cols-5 text-center gap-6 border-b-2 border-[#441eae] py-4 max-sm:grid-cols-3 max-sm:w-full max-sm:px-2">
                         {
                             filterNota.map(e => {
                                 return <RelacionCard key={e._id} img={e.img} keytitle={e.keytitle} pretitle={e.pretitle} section={e.section} _id={e._id} title={e.title}/>
