@@ -24,8 +24,7 @@ export {default} from 'next-auth/middleware'
 // }
 
 export const config = {
-  // matcher: ['/admin/:path*', '/admin']
-  matcher: ['/noexiste  ']
+  matcher: ['/admin/:path*', '/admin']
 }
 
 // export async function middleware(request: NextRequest) {
