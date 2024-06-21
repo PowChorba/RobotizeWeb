@@ -54,3 +54,8 @@ export interface NewsUpdatedModel {
   tags: string[]
 }
 
+export interface CreateSuscriber {
+  email: string
+  fullName: string
+}
+
