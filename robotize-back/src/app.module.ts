@@ -10,14 +10,16 @@ import { HoroscopoModule } from './horoscopo/horoscopo.module';
 import { config } from 'dotenv';
 import { TagsModule } from './tags/tags.module';
 import { CounterModule } from './counter/counter.module';
+import { SuscribersController } from './suscribers/suscribers.controller';
+import { SuscribersModule } from './suscribers/suscribers.module';
 config()
 @Module({
   imports: [MongooseModule.forRootAsync({
     useFactory: () => ({
       uri: process.env.MONGODB
     })
-  }),NewsModule, DolarModule, WeatherModule, SearchModule, HoroscopoModule, TagsModule, CounterModule],
-  controllers: [AppController],
+  }),NewsModule, DolarModule, WeatherModule, SearchModule, HoroscopoModule, TagsModule, CounterModule, SuscribersModule],
+  controllers: [AppController, SuscribersController],
   providers: [AppService],
 })
 export class AppModule {}
